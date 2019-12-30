@@ -4,7 +4,7 @@ All sudobo's components in this package.
 
 # Development
 ### Clone github
-Http
+HTTPS
 ```
 git clone https://github.com/Sudobo/com.git
 ```
@@ -46,8 +46,13 @@ Example:
 - Step 2: Install package: `npm add ../com`
 
 ### On github
+HTTPS:
 ```
-npm install --save github:https://github.com/Sudobo/com
+npm install --save git+https://git@github.com/Sudobo/com
+```
+Or SSH
+```
+npm install --save git+ssh://git@github.com/Sudobo/com
 ```
 
 ### On NPM
