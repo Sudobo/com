@@ -22,7 +22,7 @@ To export component, we will define it in `src/index.js` file.
 npm run dev
 ```
 
-### Build library
+### Build package
 This action will create `dist` folder in this package. When a project install this package, it will use `dist` folder.
 
 ```
@@ -42,7 +42,7 @@ npm add [Package path]
 Example:
 - Project source: `~/project/sudobo-website`
 - Package source: `~/project/com`
-- Step 1: Go to project source: cd `~/project/sudobo-website`
+- Step 1: Go to project source: `cd ~/project/sudobo-website`
 - Step 2: Install package: `npm add ../com`
 
 ### On github
@@ -56,4 +56,6 @@ npm install --save git+ssh://git@github.com/Sudobo/com
 ```
 
 ### On NPM
-Updating...
+```
+npm install --save @sudobo/com
+```

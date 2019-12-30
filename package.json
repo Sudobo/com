@@ -1,7 +1,6 @@
 {
-  "name": "com",
+  "name": "@sudobo/com",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "dev": "vue-cli-service dev",
     "build": "vue-cli-service build --target lib --name com src/index.js",
