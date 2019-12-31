@@ -2,7 +2,7 @@
   "name": "@sudobo/com",
   "version": "0.1.0",
   "scripts": {
-    "dev": "vue-cli-service dev",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name com src/index.js",
     "lint": "vue-cli-service lint"
   },
