@@ -1,11 +1,14 @@
 <template>
   <div id="app">
     <com-example />
+    <google-map-api />
   </div>
 </template>
 
 <script>
 import comExample from './components/com-example'
+import googleMapApi from './components/google-map-api'
+
 export default {
   name: 'app',
   data: function() {
@@ -14,7 +17,8 @@ export default {
     }
   },
   components: {
-    comExample
+    comExample,
+    googleMapApi
   }
 }
 </script>
