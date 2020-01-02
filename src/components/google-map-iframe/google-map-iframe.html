@@ -1,0 +1,100 @@
+<section class="google-map-iframe">
+    <h1 class="title">google-map-iframe Component</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label>Width</label>
+                        <input type="number" class="form-control" v-model.number="size.width" min="300">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Height</label>
+                        <input type="number" class="form-control" v-model.number="size.height" min="300">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label>Zoom</label>
+                        <input type="number" class="form-control" v-model.number="zoom" min="0">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Mode</label>
+                        <select class="custom-select" v-model="mode">
+                            <option value="place">Place</option>
+                            <option value="search">Search</option>
+                            <option value="view">View</option>
+                            <option value="directions">Directions</option>
+                            <option value="streetview">Streetview</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row" v-if="mode == 'directions'">
+                    <div class="form-group col-md-6">
+                        <label>From</label>
+                        <input type="text" class="form-control" v-model="from">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>To</label>
+                        <input type="text" class="form-control" v-model="to">
+                    </div>
+                </div>
+
+                <div class="form-row" v-if="mode == 'place' || mode == 'search'">
+                    <div class="form-group col-md-12">
+                        <label>Adress</label>
+                        <input type="text" class="form-control" v-model="address" placeholder="Nhap dia chi" ref="autocomplete">
+                    </div>
+                    <p class="note" v-if='mode == "place"' >"Place" mode displays a map pin at a particular place or address.</p>
+                    <p class="note" v-if='mode == "search"'>"Search" mode displays results for a search across the visible map region.</p>
+                </div>
+
+                <div class="form-row" v-if="mode == 'view'">
+                    <div class="form-group col-md-12">
+                        <label>Adress</label>
+                        <input type="text" class="form-control" v-model="center" placeholder="Nhap toa do">
+                    </div>
+                    <p class="note">"View" mode returns a map with no markers or directions.</p>
+                </div>
+
+                <div class="form-row" v-if="mode == 'streetview'">
+                    <div class="form-group col-md-6">
+                        <label>Street View</label>
+                        <input type="text" class="form-control" v-model="center" placeholder="Nhap toa do">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label>Heading</label>
+                        <input type="number" class="form-control" v-model.number="heading">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label>Pitch</label>
+                        <input type="number" class="form-control" v-model.number="pitch">
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label>Fov</label>
+                        <input type="number" class="form-control" v-model.number="fov">
+                    </div>
+                    <ol>
+                        <li class="note">"Heading" indicates the compass heading of the camera in degrees clockwise from North. Accepted values are from -180° to 360°.</li>
+                        <li class="note">"Pitch" specifies the angle, up or down, of the camera. The pitch is specified in degrees from -90° to 90°.</li>
+                        <li class="note">"Fov" determines the horizontal field of view of the image.</li>
+                    </ol>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <iframe v-if="address != '' && zoom != '' && mode !=''" frameborder="0" :style="{width: size.width + 'px', height: size.height + 'px'}"
+                :src="src(mode)" allowfullscreen></iframe>
+                <p v-else class="warning">{{ warning }}</p>
+            </div>
+        </div>
+    </div>
+</section>
