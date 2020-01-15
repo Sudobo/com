@@ -1,0 +1,39 @@
+.search-animation {
+    h1.title {
+        text-align: center;
+        color: #29c58d;
+        padding-bottom: 20px;
+    }
+}
+
+.search-box {
+    position: absolute;
+    right: 0;
+    border-radius: 3px;
+    z-index: 1;
+    background-color: rebeccapurple;
+        &:hover >.input-search {
+        width: 345px;
+        border: 1px solid #cccccc;
+    }
+    img.img-search {
+        margin: 11px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
+
+    input.input-search {
+        text-align: center;
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s;
+        color: #29c58d;
+        margin: 11px;
+        width: 0;
+        height: 45px;
+        border-radius: 15px;
+        outline: none;
+        border: none;
+    }
+}
+
