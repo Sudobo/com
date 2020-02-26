@@ -26,7 +26,7 @@ export default {
 
     },
     mounted () {
-        window.console.log(111)
+        window.console.log('vao day nhe')
     },
     methods: {
         src: function (mode) {

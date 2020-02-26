@@ -18,7 +18,7 @@
                     </div>
                 </div>
 
-                <div class="form-row">
+                <!-- <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Lat</label>
                         <input type="number" class="form-control" v-model.number="center.lat">
@@ -26,6 +26,20 @@
                     <div class="form-group col-md-6">
                         <label>Lng</label>
                         <input type="number" class="form-control" v-model.number="center.lng">
+                    </div>
+                </div> -->
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Link Icon Marker</label>
+                        <input type="text" class="form-control" placeholder="Nhap duong dan anh va nhan enter" :value="icon.url" @keyup.13="searchLink">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label>Search</label>
+                        <GmapAutocomplete class='form-control' @place_changed="setPlace"></GmapAutocomplete>
                     </div>
                 </div>
 
@@ -37,13 +51,6 @@
                     </div>
                     <div v-else>khong co gi de hien thi</div>
                 </ol>
-
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label>Link Icon Marker</label>
-                        <input type="text" class="form-control" placeholder="Nhap duong dan anh va nhan enter" :value="icon.url" @keyup.13="searchLink">
-                    </div>
-                </div>
             </div>
 
             <div class="col-md-6">

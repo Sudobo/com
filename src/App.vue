@@ -26,7 +26,7 @@ export default {
     googleMapIframe,
     searchAnimation
   }
-}
+};
 </script>
 
 <style>
